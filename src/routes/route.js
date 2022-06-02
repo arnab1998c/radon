@@ -20,17 +20,20 @@ router.get('/test-me', function (req, res) {
 });
 
 router.get('/hello', function (req, res) {
-    let arrMonths = lodash.chunk(["January", "February", "March", "April", "May", "June", "July", "August","September", "October", "November", "December"], 3)
-    console.log(arrMonths)
+    let arrMonths = ["January", "February", "March", "April", "May", "June", "July", "August","September", "October", "November", "December"]
+    let arrMonths1 = lodash.chunk(arrMonths, 3)
+    console.log(arrMonths1)
 
-    let arrOddNumbers = lodash.tail([1, 3, 5, 7, 9, 11, 13, 15, 17, 19])
-    console.log(arrOddNumbers)
+    let arrOddNumbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    let arrOddNumbers1 = lodash.tail(arrOddNumbers)
+    console.log(arrOddNumbers1)
 
     let arrContainsDuplicate = lodash.union([21, 22, 23], [23, 24, 25], [25, 26, 27], [27, 28, 29], [29, 30, 31])
     console.log(arrContainsDuplicate)
 
-    let toObj = lodash.fromPairs([["horror","The Shining"],["drama","Titanic"],["thriller","Shutter Island"],["fantasy","Pans Labyrinth"]])
-    console.log(toObj)
+    let toObj = [["horror","The Shining"],["drama","Titanic"],["thriller","Shutter Island"],["fantasy","Pans Labyrinth"]]
+    let toObj1 = lodash.fromPairs(toObj)
+    console.log(toObj1)
    
     res.send('Here we go')
 })
