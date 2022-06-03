@@ -1,4 +1,5 @@
 const express = require('express');
+// const app = express()
 const { append } = require('express/lib/response');
 const externalModule = require('../logger/logger')
 const externalModule1 = require('../util/helper')
@@ -36,6 +37,40 @@ router.get('/hello', function (req, res) {
     console.log(toObj1)
    
     res.send('Here we go')
+})
+
+router.get('/sol1', function (req, res) {
+
+    let arr= [1, 2, 3, 4, 5, 7, 8, 9]
+    
+    let arrTotal = 0
+    for (let i=0; i<arr.length; i++){
+         arrTotal = arrTotal + arr[i]
+    }
+
+    let len = arr.length + 1
+    let consecTotal = len*(len+1)/2
+    let missingNumber = consecTotal-arrTotal
+
+    res.send({data: missingNumber})
+})
+
+router.get("/sol2", function(req, res){
+
+    let anotherArr = [33, 34, 35, 37, 38]
+
+    anotherArrSum = 0
+    for(let i=0; i<anotherArr.length; i++){
+        anotherArrSum = anotherArrSum + anotherArr[i]
+    }
+
+    let anotherLen = anotherArr.length + 1
+    let firstNum = anotherArr[0]
+    let lastNum = anotherArr[4]
+    let anotherConsecSum = (firstNum+lastNum)*anotherLen/2
+    let missingNum = anotherConsecSum - anotherArrSum
+
+    res.send({data: missingNum})
 })
 
 module.exports = router;
