@@ -38,7 +38,7 @@ router.get('/films', function (req, res) {
        
 })
 
-/*router.get('/films/:filmid', function (req, res) {
+router.get('/films/:filmid', function (req, res) {
     let filmNames = [ {
         "id": 1,
         "name": "The Shining"
@@ -54,13 +54,13 @@ router.get('/films', function (req, res) {
        }]
 
        if (req.params.filmid<filmNames.length){
-           res.send(filmNames[req.params.filmid])
+           res.send(filmNames[req.params.filmid-1])
        } else {
            res.send("no movies found")
        }
 
        
-})*/
+})
 
 
 
